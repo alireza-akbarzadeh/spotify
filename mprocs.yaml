@@ -1,0 +1,9 @@
+procs:
+  next:
+    cmd: ['pnpm', 'dev']
+
+  db:studio:
+    cmd: ['pnpm', 'db:studio']
+
+  inngest:
+    cmd: ['pnpm', 'inngest:dev']
