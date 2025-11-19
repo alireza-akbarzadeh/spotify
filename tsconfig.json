@@ -27,6 +27,9 @@
       "@/*": [
         "./*"
       ],
+      "@/api/*": [
+        "./src/core/api/*"
+      ],
       "@/features/*": [
         "./src/features/*"
       ],
@@ -40,10 +43,16 @@
         "./src/app/*"
       ],
       "@/components/*": [
-        "./src/shared/ui/components/*"
+        "./src/shared/components/*"
       ],
-      "@/lib/utils": [
-        "./src/shared/ui/utils/utils.ts"
+      "@/hooks/*": [
+        "./src/shared/ui/hooks/*"
+      ],
+      "@/scripts/*": [
+        "./src/scripts/*"
+      ],
+      "@/lib": [
+        "./src/shared/lib"
       ],
       "@/lib/db": [
         "./src/shared/infrastructure/database/db.ts"
@@ -77,16 +86,14 @@
         "./src/shared/ui/utils/*",
         "./src/core/auth/*",
         "./src/core/api/*",
-        "./src/shared/application/services/*"
+        "./src/shared/application/services/*",
+        "./src/shared/lib/*"
       ],
       "@/actions/*": [
         "./src/core/auth/*"
       ],
       "@/config/*": [
         "./src/core/config/*"
-      ],
-      "@/hooks/*": [
-        "./src/shared/ui/hooks/*"
       ],
       "@/inngest/*": [
         "src/core/inngest/*"

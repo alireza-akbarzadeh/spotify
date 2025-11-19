@@ -7,6 +7,7 @@ import { Provider } from 'jotai';
 import React from 'react';
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { Toaster } from '@/components/ui/sonner';
+import { AudioPlayerBar } from '@/features/player';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,18 +44,18 @@ export const metadata: Metadata = {
   authors: [{ name: 'n8n Team' }],
   generator: 'Next.js',
   keywords: [
-    'workflow automation',
-    'no-code',
-    'low-code',
-    'n8n',
-    'automation',
-    'integration',
-    'workflow builder',
-    'business automation',
+    'music player',
+    'spotify',
+    'music streaming',
+    'playlists',
+    'albums',
+    'artists',
+    'songs',
+    'audio player',
   ],
   referrer: 'origin-when-cross-origin',
-  creator: 'n8n',
-  publisher: 'n8n',
+  creator: 'Spotify',
+  publisher: 'Spotify',
   robots: {
     index: true,
     follow: true,
@@ -96,7 +97,7 @@ export const metadata: Metadata = {
     title: APP_NAME,
     description: APP_DESCRIPTION,
     images: [`${APP_URL}/twitter-image.png`],
-    creator: '@n8n_io',
+    creator: '@spotify',
   },
   appleWebApp: {
     capable: true,
@@ -133,7 +134,8 @@ export default function RootLayout({
         <TRPCReactProvider>
           <NuqsAdapter>
             <Provider>
-              {children}
+              <div className="pb-[90px]">{children}</div>
+              <AudioPlayerBar />
               <Toaster richColors closeButton position="bottom-right" />
             </Provider>
           </NuqsAdapter>

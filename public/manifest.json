@@ -1,11 +1,11 @@
 {
-  "name": "n8n Workflow Automation",
-  "short_name": "n8n",
-  "description": "Build powerful workflow automations with n8n",
+  "name": "Spotify Music Player",
+  "short_name": "Spotify",
+  "description": "Listen to millions of songs and podcasts",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#000000",
+  "theme_color": "#1DB954",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -57,7 +57,7 @@
       "purpose": "maskable any"
     }
   ],
-  "categories": ["productivity", "business", "utilities"],
+  "categories": ["music", "entertainment"],
   "screenshots": [
     {
       "src": "/screenshots/desktop-1.png",
@@ -74,17 +74,24 @@
   ],
   "shortcuts": [
     {
-      "name": "Workflows",
-      "short_name": "Workflows",
-      "description": "View and manage your workflows",
-      "url": "/workflows",
+      "name": "Home",
+      "short_name": "Home",
+      "description": "Browse music and playlists",
+      "url": "/",
       "icons": [{ "src": "/icons/icon-96.png", "sizes": "96x96" }]
     },
     {
-      "name": "Create Workflow",
-      "short_name": "Create",
-      "description": "Create a new workflow",
-      "url": "/workflows/new",
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search for songs, artists, and albums",
+      "url": "/search",
+      "icons": [{ "src": "/icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Library",
+      "short_name": "Library",
+      "description": "Your music library",
+      "url": "/library",
       "icons": [{ "src": "/icons/icon-96.png", "sizes": "96x96" }]
     }
   ]

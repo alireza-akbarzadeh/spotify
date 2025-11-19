@@ -81,7 +81,6 @@
     "@trpc/tanstack-react-query": "^11.7.1",
     "@upstash/ratelimit": "^2.0.7",
     "@upstash/redis": "^1.35.6",
-    "@xyflow/react": "^12.9.3",
     "ai": "^5.0.92",
     "better-auth": "^1.3.34",
     "class-variance-authority": "^0.7.1",
