@@ -5,7 +5,7 @@ import { requireUnAuth } from '@/core/auth';
 export default async function LoginPage() {
   await requireUnAuth();
   return (
-    <section id="login" className="w-full max-w-md">
+    <section id="login" className="w-full max-w-xl">
       <LoginForm />
     </section>
   );

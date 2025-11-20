@@ -1,20 +1,11 @@
 'use server';
 
 import { redirect } from 'next/navigation';
-import { signIn } from '@/lib/auth-client';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
 export async function loginWithProvider(provider: string) {
-  const result = await signIn.social({
-    provider,
-    callbackURL: '/dashboard', // change if needed
-  });
-
-  if (result.error) {
-    throw new Error(result.error.message);
-  }
-  if (result.data.url) return redirect(result.data.url);
+  return redirect(`/api/auth/signin/${provider}?callbackURL=/`);
 }
 
 export async function requireAuth() {

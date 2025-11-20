@@ -1,10 +1,3 @@
-/**
- * Audio Player Bar Component
- *
- * Bottom fixed player bar - main player UI
- * Matches Spotify's design with track info, controls, and volume
- */
-
 'use client';
 
 import { useAudioPlayer } from '../hooks/use-audio-player';
@@ -29,11 +22,6 @@ export function AudioPlayerBar({ className }: AudioPlayerBarProps) {
     const nextMode = modes[(currentIndex + 1) % modes.length];
     player.setRepeatMode(nextMode);
   };
-
-  // Don't show player if no track is loaded
-  if (!player.currentTrack) {
-    return null;
-  }
 
   return (
     <div

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { TRPCReactProvider } from '@/trpc/client';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
@@ -8,16 +8,18 @@ import React from 'react';
 import { APP_DESCRIPTION, APP_NAME, APP_URL } from '@/config/app';
 import { Toaster } from '@/components/ui/sonner';
 import { AudioPlayerBar } from '@/features/player';
+import { ThemeProvider } from 'next-themes';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
   display: 'swap',
   preload: true,
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const poppins = Poppins({
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   preload: true,
@@ -41,20 +43,25 @@ export const metadata: Metadata = {
   },
   description: APP_DESCRIPTION,
   applicationName: APP_NAME,
-  authors: [{ name: 'n8n Team' }],
+  authors: [{ name: 'Spotify Team' }],
   generator: 'Next.js',
   keywords: [
-    'music player',
-    'spotify',
     'music streaming',
+    'spotify',
+    'music player',
+    'online music',
+    'stream songs',
     'playlists',
     'albums',
     'artists',
     'songs',
     'audio player',
+    'podcasts',
+    'discover music',
+    'new releases',
   ],
   referrer: 'origin-when-cross-origin',
-  creator: 'Spotify',
+  creator: 'Spotify Music Platform',
   publisher: 'Spotify',
   robots: {
     index: true,
@@ -128,18 +135,20 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${poppins.variable} antialiased`}
         suppressHydrationWarning
       >
-        <TRPCReactProvider>
-          <NuqsAdapter>
-            <Provider>
-              <div className="pb-[90px]">{children}</div>
-              <AudioPlayerBar />
-              <Toaster richColors closeButton position="bottom-right" />
-            </Provider>
-          </NuqsAdapter>
-        </TRPCReactProvider>
+        {' '}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <TRPCReactProvider>
+            <NuqsAdapter>
+              <Provider>
+                {children}
+                <Toaster richColors closeButton position="bottom-right" />
+              </Provider>
+            </NuqsAdapter>
+          </TRPCReactProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

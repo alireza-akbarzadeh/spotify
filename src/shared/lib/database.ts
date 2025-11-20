@@ -3,7 +3,7 @@
  * Singleton instance with query logging and performance monitoring
  */
 
-import { PrismaClient } from '@/prisma/generated/prisma/client';
+import { PrismaClient } from '@/prisma/generated';
 import { logger } from './logger';
 import { isDevelopment } from '@/core/config/env';
 

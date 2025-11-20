@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import * as Sentry from '@sentry/nextjs';
+import { Button } from '@/components/ui/button';
 
 export default function Error({
   error,
@@ -30,25 +30,28 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="bg-background flex min-h-screen items-center justify-center p-4">
+    <div className="flex min-h-screen items-center justify-center bg-black p-4">
       <div className="mx-auto max-w-2xl text-center">
         <div className="mb-8">
           <div className="text-6xl">⚠️</div>
         </div>
-        <h2 className="mb-4 text-3xl font-semibold tracking-tight">Something went wrong!</h2>
-        <p className="text-muted-foreground mb-2 text-lg">
+        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white">
+          Something went wrong!
+        </h2>
+        <p className="mb-2 text-lg text-gray-400">
           {error.message || 'An unexpected error occurred'}
         </p>
         {error.digest && (
-          <p className="text-muted-foreground mb-8 font-mono text-sm">Error ID: {error.digest}</p>
+          <p className="mb-8 font-mono text-sm text-gray-500">Error ID: {error.digest}</p>
         )}
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <Button onClick={() => reset()} size="lg">
-            Try again
-          </Button>
-          <Button onClick={() => (window.location.href = '/')} variant="outline" size="lg">
+          <Button onClick={() => reset()}>Try again</Button>
+          <button
+            onClick={() => (window.location.href = '/')}
+            className="inline-flex h-11 items-center justify-center rounded-full border border-gray-700 bg-transparent px-8 text-sm font-medium text-white shadow-sm transition-all hover:border-gray-600 hover:bg-gray-900 focus-visible:ring-1 focus-visible:ring-gray-600 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+          >
             Go home
-          </Button>
+          </button>
         </div>
       </div>
     </div>

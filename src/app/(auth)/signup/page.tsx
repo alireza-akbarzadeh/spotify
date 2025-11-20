@@ -5,7 +5,7 @@ import React from 'react';
 export default async function RegisterPage() {
   await requireUnAuth();
   return (
-    <section id="register" className="w-full max-w-md">
+    <section id="register">
       <RegisterForm />
     </section>
   );
